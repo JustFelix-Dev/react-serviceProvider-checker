@@ -2,8 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
+}
+body{
+   background-image:url('./assets/polkadot.webp');
+   background-position:center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   position: relative;
 }
 .display__Image{
   max-width: 100%;
   display: none;
+}
+.container{
+  border: 2px solid red;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+ 
 }
