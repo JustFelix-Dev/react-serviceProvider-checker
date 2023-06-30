@@ -31,6 +31,7 @@ const NetworkChecker = () => {
         onSubmit : async value =>{
             setIsSubmitting(true)
                    await waait()
+                   setIsSubmitting(false)
                 let parsedValue = JSON.stringify(value);
                 let processedValue = parsedValue.split(':')[1];
                 let updatedValue = processedValue.split('}')[0];
@@ -57,9 +58,8 @@ const NetworkChecker = () => {
                         imageRef.current.src = 'images/9mobileLogo.png';
                 }
                 else{
-                       
+
                 }
-                setIsSubmitting(false)
            
         },
         validationSchema
@@ -85,7 +85,22 @@ const NetworkChecker = () => {
            </div>
 
             <div className="display__image">
-                <img src={''} ref= {imageRef} style={{borderRadius:"9px"}} className='display__Image' alt='serviceProvider_Image' height={150} width={150} />
+                {
+                    isSubmitting ? ( <div class="hourglassBackground">
+                    <div class="hourglassContainer">
+                      <div class="hourglassCurves"></div>
+                      <div class="hourglassCapTop"></div>
+                      <div class="hourglassGlassTop"></div>
+                      <div class="hourglassSand"></div>
+                      <div class="hourglassSandStream"></div>
+                      <div class="hourglassCapBottom"></div>
+                      <div class="hourglassGlass"></div>
+                    </div>
+                  </div>):(
+                     <img src={''} ref= {imageRef} style={{borderRadius:"9px"}} className='display__Image' alt='serviceProvider_Image' height={150} width={150} />
+                  )
+                }
+               
             </div>   
              <div className="output_text">
                          {nspName}  {myInput} 
