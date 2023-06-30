@@ -13,7 +13,6 @@ body{
 }
 .display__Image{
   max-width: 100%;
-  display: none;
 }
 .container{
   display: flex;
