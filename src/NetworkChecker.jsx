@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import 'yup-phone-lite'
-import { Form, useFetcher } from 'react-router-dom'
 import { waait } from './helper'
 
 const initialValues = {
@@ -19,15 +18,20 @@ const validationSchema = Yup.object().shape({
 
 
 const NetworkChecker = () => {
+
     const [ myInput,setMyInput ] = useState('');
     const [ nspName,setNspName] = useState('');
     const [ isLoading,setIsLoading ] = useState(false);
+    const [ color , setColor ] = useState('');
     const [ mySrc,setMySrc ] = useState('');
     const [ notFound,setNotFound ] = useState('');
     const [isHighlighted, setIsHighlighted] = useState(false);
-    const imageRef = useRef()
+    const imageRef = useRef();
+
+
           
     const handleClick=async(value)=>{
+                setIsHighlighted(false)
                   setNspName('')
                   setMyInput('')
                 setIsLoading(true)
@@ -37,16 +41,18 @@ const NetworkChecker = () => {
                 let updatedValue = processedValue.split('}')[0];
                 let finishedValue = updatedValue.substring(1,11);
                   setMyInput(finishedValue)
-                if(finishedValue.startsWith('814')||finishedValue.startsWith('803')||finishedValue.startsWith('703')||finishedValue.startsWith('706')||finishedValue.startsWith('813')||finishedValue.startsWith('816')||finishedValue.startsWith('810')||finishedValue.startsWith('814')||finishedValue.startsWith('903')||finishedValue.startsWith('0906')||finishedValue.startsWith('913')||finishedValue.startsWith('916')||finishedValue.startsWith('7025')||finishedValue.startsWith('7026')||finishedValue.startsWith('704')){
+                if(finishedValue.startsWith('814')||finishedValue.startsWith('803')||finishedValue.startsWith('703')||finishedValue.startsWith('706')||finishedValue.startsWith('813')||finishedValue.startsWith('816')||finishedValue.startsWith('810')||finishedValue.startsWith('814')||finishedValue.startsWith('903')||finishedValue.startsWith('906')||finishedValue.startsWith('913')||finishedValue.startsWith('916')||finishedValue.startsWith('7025')||finishedValue.startsWith('7026')||finishedValue.startsWith('704')){
                          setIsLoading(false)
                          setIsHighlighted(true)
                          setNspName('MTN : 0')
+                         setColor('gold')
                          setMySrc('images/mtnLogo.png')
                          setNotFound('')
                 }
                 else if(finishedValue.startsWith('805')||finishedValue.startsWith('807')||finishedValue.startsWith('705')||finishedValue.startsWith('815')||finishedValue.startsWith('811')||finishedValue.startsWith('905')||finishedValue.startsWith('915')){
                         setIsLoading(false)
                         setIsHighlighted(true)
+                        setColor('green')
                         setNspName('GLO : 0')
                         setMySrc('images/gloLogo.jpg')
                         setNotFound('')
@@ -56,6 +62,7 @@ const NetworkChecker = () => {
                         setIsLoading(false)
                         setIsHighlighted(true)
                         setNspName('AIRTEL : 0')
+                        setColor('red')
                         setMySrc('images/airtelLogo.jpg')
                         setNotFound('')
 
@@ -63,6 +70,7 @@ const NetworkChecker = () => {
                 else if(finishedValue.startsWith('809')||finishedValue.startsWith('818')||finishedValue.startsWith('817')||finishedValue.startsWith('909')||finishedValue.startsWith('908')){
                             setIsLoading(false)
                             setIsHighlighted(true)
+                            setColor('green')
                             setNspName('9mobile : 0')
                             setMySrc('images/9mobileLogo.png')
                             setNotFound('')
@@ -71,9 +79,9 @@ const NetworkChecker = () => {
                 else{
                         setIsLoading(false)
                         setNspName('Not Found : 0')
+                        setColor('#333')
                         setNotFound("Sorry, Number not found!")
                         setMySrc('images/unknown.png')
-
                 }
         
     }
@@ -89,8 +97,9 @@ const NetworkChecker = () => {
              <div className="container">
            <div className="form__wrapper">
             <form action="" onSubmit={formik.handleSubmit}>
-           <marquee behavior="scroll" direction="right"><h2> Service Provider Checker</h2></marquee> 
-           <div className="ui-wrapper">
+           <h2> Service Provider Checker</h2>
+               <div className="inputs">
+               <div className="ui-wrapper">
                 <input checked="" id="Nigeria" name="flag" type="radio"/>
                 <input className="dropdown-checkbox" name="dropdown" id="dropdown" type="checkbox"/>
                 <label className="dropdown-container" htmlFor="dropdown"></label>
@@ -129,11 +138,11 @@ const NetworkChecker = () => {
                     <div class="spinner-blade"></div>
                     <div class="spinner-blade"></div>
                 </div>) : <span>Validate</span>
-                }</button>  <br />
+                }</button>
+               </div>
                 {<span className='invalid'>{formik.touched.myInput && formik.errors.myInput}</span>}
             </form>
            </div>
-
             <div className="display__image">
                 {
                     isLoading ? (<div class="three-body">
@@ -144,9 +153,8 @@ const NetworkChecker = () => {
                      <img src={mySrc} ref= {imageRef} style={{borderRadius:"9px",display: isHighlighted ? 'block':'none'}} className='display__Image' alt='serviceProvider_Image' height={150} width={150} />
                   )
                 }
-               
             </div>   
-             <div className="output_text">
+             <div className="output_text" style={{display: isHighlighted ? 'block':'none',"--accent":color, color: color === 'gold' ? 'black':'white'}}>
                          {nspName}{myInput} <br/>
                          {notFound}
                 </div>           

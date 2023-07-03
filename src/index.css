@@ -10,6 +10,10 @@
   color: red;
 }
 
+:root{
+  --accent: red;
+}
+
 body{
    background-image:url('./assets/background.webp');
    background-position:center;
@@ -17,8 +21,19 @@ body{
    background-size: cover;
    background-attachment: fixed;
 }
+
 .display__Image{
   max-width: 100%;
+  display: block;
+  border: 1px solid black;
+}
+
+.output_text{
+  background-color: var(--accent);
+  padding:.2rem .5rem;
+  color:white;
+  font-weight:500;
+  border-radius:5px;
 }
 .container{
   display: flex;
@@ -28,18 +43,25 @@ body{
   gap: 2rem;
   width: 70%;
   margin-inline: auto;
-  margin-top: 10%;     
+  margin-top: 10%;    
 }
+
 .form__wrapper{
   text-align: center;
   width: 90%;
+}
+
+.form__wrapper .inputs{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
  /* LOADER */
  .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;
-  --uib-color: #5D3FD3;
+  --uib-color: orangered;
   position: relative;
   display: inline-block;
   height: var(--uib-size);
