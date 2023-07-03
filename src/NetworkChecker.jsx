@@ -12,7 +12,7 @@ const validationSchema = Yup.object().shape({
     myInput:Yup.string().phone('NG','Please enter a valid phone Number')
                         .min(9,'Complete your 10 digits')
                         .max(10,'More than 10 digits!')
-               .required('Enter Your 10 digits')
+                        .required('Enter Your 10 digits')
 
 })
 
@@ -25,7 +25,7 @@ const NetworkChecker = () => {
     const [ color , setColor ] = useState('');
     const [ mySrc,setMySrc ] = useState('');
     const [ notFound,setNotFound ] = useState('');
-    const [isHighlighted, setIsHighlighted] = useState(false);
+    const [ isHighlighted, setIsHighlighted ] = useState(false);
     const imageRef = useRef();
 
 
