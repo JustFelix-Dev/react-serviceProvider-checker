@@ -53,6 +53,7 @@ body{
   align-items: center;
   gap: 2rem;
   width: 90%;
+  height: 90vh;
   min-width: 280px;
   margin-inline: auto;
   margin-top: 10%;    
@@ -577,7 +578,7 @@ button{
 /* footer */
 footer{
   position: absolute;
-  bottom: .4rem;
+  bottom: 0;
 }
 
 /* Responsiveness */
