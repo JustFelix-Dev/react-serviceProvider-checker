@@ -144,6 +144,7 @@ const NetworkChecker = () => {
                 {<span className='invalid'>{formik.touched.myInput && formik.errors.myInput}</span>}
             </form>
            </div>
+           <div className="outputs">
             <div className="display__image">
                 {
                     isLoading ? (<div class="three-body">
@@ -159,6 +160,8 @@ const NetworkChecker = () => {
                          {nspName}{myInput} <br/>
                          {notFound}
                 </div>  
+
+           </div>
                 <footer>
                     <span className='footer'>Powered by ❤ <a target='blank' href="https://www.linkedin.com/in/justfelixowolabi">Just-FelixDev</a></span>
                 </footer>         
