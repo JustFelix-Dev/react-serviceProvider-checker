@@ -31,6 +31,8 @@ body{
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
+   height: 98vh;
+   position: relative;
 }
 
 .display__Image{
@@ -52,11 +54,10 @@ body{
   align-items: center;
   gap: 2rem;
   width: 90%;
-  height: 90vh;
+  height: 95vh;
   min-width: 280px;
   margin-inline: auto;
-  position: relative;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .form__wrapper{
@@ -590,7 +591,7 @@ footer{
     font-size: 1.2rem;
   }
   .container{
-    position: relative;
+    /* position: relative; */
   }
   .form__wrapper{
     margin-top: 25%;
