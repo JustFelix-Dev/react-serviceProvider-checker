@@ -52,10 +52,11 @@ body{
   align-items: center;
   gap: 2rem;
   width: 90%;
-  height: 100dvh;
+  height: 90vh;
   min-width: 280px;
   margin-inline: auto;
   position: relative;
+  /* border: 2px solid red; */
 }
 
 .form__wrapper{
