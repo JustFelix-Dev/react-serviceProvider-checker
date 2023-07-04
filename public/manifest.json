@@ -1,18 +1,18 @@
 {
     "name" : "Network Provider Checker",
-    "short_name": "NPC Checker",
+    "short_name": "NPS Checker",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#333333",
     "icons" :[
         {
-         "src": "pwaImage.jpg",
+         "src": "pwaIcon.jpg",
          "sizes": "192x192",
          "type": "image/png"
         },
         {
-         "src": "pwaImage.jpg",
+         "src": "pwaIcon.jpg",
          "sizes": "512x512",
          "type": "image/png"
            }
