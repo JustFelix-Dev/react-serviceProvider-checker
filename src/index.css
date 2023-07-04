@@ -31,7 +31,7 @@ body{
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   height: 96vh;
+   height: 94vh;
    position: relative;
 }
 
@@ -54,7 +54,7 @@ body{
   align-items: center;
   gap: 2rem;
   width: 90%;
-  height: 95vh;
+  height: 91vh;
   min-width: 280px;
   margin-inline: auto;
   /* border: 2px solid red; */
