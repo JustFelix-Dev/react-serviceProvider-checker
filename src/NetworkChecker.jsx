@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import 'yup-phone-lite'
 import { waait } from './helper'
+import { BsFillTelephoneForwardFill } from 'react-icons/bs';
 
 const initialValues = {
     myInput: '',
@@ -97,7 +98,7 @@ const NetworkChecker = () => {
              <div className="container">
            <div className="form__wrapper">
             <form action="" onSubmit={formik.handleSubmit}>
-           <h2> Service Provider Checker</h2>
+           <div className="title"><h2> Service Provider Checker</h2><BsFillTelephoneForwardFill/></div>
                <div className="inputs">
                <div className="ui-wrapper">
                 <input checked="" id="Nigeria" name="flag" type="radio"/>
@@ -105,7 +106,7 @@ const NetworkChecker = () => {
                 <label className="dropdown-container" htmlFor="dropdown"></label>
                 <div className="input-wrapper">
                     <legend>
-                        <label for="phonenumber">
+                        <label htmlFor="phonenumber">
                         Phone Number*
                         </label>
                     </legend>
@@ -119,7 +120,7 @@ const NetworkChecker = () => {
                 </div>
                 <div className="select-wrapper">
                     <ul>
-                        <li className="Nigeria"><label for="Nigeria"><span>NG</span>Nigeria (+234)</label></li>
+                        <li className="Nigeria"><label htmlFor="Nigeria"><span>NG</span>Nigeria (+234)</label></li>
                     </ul>
                 </div>
                 </div>
@@ -157,7 +158,10 @@ const NetworkChecker = () => {
              <div className="output_text" style={{display: isHighlighted ? 'block':'none',"--accent":color, color: color === 'gold' ? 'black':'white'}}>
                          {nspName}{myInput} <br/>
                          {notFound}
-                </div>           
+                </div>  
+                <footer>
+                    <span className='footer'>Powered by ❤ <a target='blank' href="https://www.linkedin.com/in/justfelixowolabi">Just-FelixDev</a></span>
+                </footer>         
              </div>
          </>
   )
