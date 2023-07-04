@@ -31,7 +31,7 @@ body{
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   height: 94vh;
+   height: 100vh;
    position: relative;
 }
 
@@ -578,7 +578,7 @@ button{
 /* footer */
 footer{
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
 }
 
 /* Responsiveness */
