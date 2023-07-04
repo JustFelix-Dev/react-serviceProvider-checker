@@ -40,45 +40,45 @@ const NetworkChecker = () => {
                   setMyInput(finishedValue)
                 if(finishedValue.startsWith('814')||finishedValue.startsWith('803')||finishedValue.startsWith('703')||finishedValue.startsWith('706')||finishedValue.startsWith('813')||finishedValue.startsWith('816')||finishedValue.startsWith('810')||finishedValue.startsWith('814')||finishedValue.startsWith('903')||finishedValue.startsWith('906')||finishedValue.startsWith('913')||finishedValue.startsWith('916')||finishedValue.startsWith('7025')||finishedValue.startsWith('7026')||finishedValue.startsWith('704')){
                          setIsLoading(false)
+                         setMySrc('images/mtnLogo.png')
                          setIsHighlighted(true)
                          setNspName('MTN : 0')
                          setColor('gold')
-                         setMySrc('images/mtnLogo.png')
                          setNotFound('')
                 }
                 else if(finishedValue.startsWith('805')||finishedValue.startsWith('807')||finishedValue.startsWith('705')||finishedValue.startsWith('815')||finishedValue.startsWith('811')||finishedValue.startsWith('905')||finishedValue.startsWith('915')){
                         setIsLoading(false)
+                        setMySrc('images/gloLogo.jpg')
                         setIsHighlighted(true)
                         setColor('green')
                         setNspName('GLO : 0')
-                        setMySrc('images/gloLogo.jpg')
                         setNotFound('')
 
                 }
                 else if(finishedValue.startsWith('802')||finishedValue.startsWith('808')||finishedValue.startsWith('708')||finishedValue.startsWith('812')||finishedValue.startsWith('701')||finishedValue.startsWith('902')||finishedValue.startsWith('901')||finishedValue.startsWith('904')||finishedValue.startsWith('907')||finishedValue.startsWith('912')){
                         setIsLoading(false)
+                        setMySrc('images/airtelLogo.jpg')
                         setIsHighlighted(true)
                         setNspName('AIRTEL : 0')
                         setColor('red')
-                        setMySrc('images/airtelLogo.jpg')
                         setNotFound('')
 
                 }
                 else if(finishedValue.startsWith('809')||finishedValue.startsWith('818')||finishedValue.startsWith('817')||finishedValue.startsWith('909')||finishedValue.startsWith('908')){
                             setIsLoading(false)
+                            setMySrc('images/9mobileLogo.png')
                             setIsHighlighted(true)
                             setColor('green')
                             setNspName('9mobile : 0')
-                            setMySrc('images/9mobileLogo.png')
                             setNotFound('')
 
                 }
                 else{
                         setIsLoading(false)
+                        setMySrc('images/unknown.png')
                         setNspName('Not Found : 0')
                         setColor('#333')
                         setNotFound("Sorry, Number not found!")
-                        setMySrc('images/unknown.png')
                 }
         
     }
