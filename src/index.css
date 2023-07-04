@@ -38,6 +38,7 @@ body{
   max-width: 100%;
   display: block;
   border: 1px solid black;
+  transition: all ease-out 140ms;
 }
 
 .output_text{

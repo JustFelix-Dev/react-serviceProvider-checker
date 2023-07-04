@@ -17,7 +17,6 @@ const validationSchema = Yup.object().shape({
 
 })
 
-
 const NetworkChecker = () => {
 
     const [ myInput,setMyInput ] = useState('');
@@ -27,9 +26,6 @@ const NetworkChecker = () => {
     const [ mySrc,setMySrc ] = useState('');
     const [ notFound,setNotFound ] = useState('');
     const [ isHighlighted, setIsHighlighted ] = useState(false);
-    const imageRef = useRef();
-
-
           
     const handleClick=async(value)=>{
                 setIsHighlighted(false)
@@ -152,7 +148,7 @@ const NetworkChecker = () => {
                     <div className="three-body__dot"></div>
                     <div className="three-body__dot"></div>
                     </div>):(
-                     <img src={mySrc} ref= {imageRef} style={{borderRadius:"9px",display: isHighlighted ? 'block':'none'}} className='display__Image' alt='serviceProvider_Image' height={150} width={150} />
+                     <img src={mySrc}  style={{borderRadius:"9px",display: isHighlighted ? 'block':'none'}} className='display__Image' alt='serviceProvider_Image' height={150} width={150} />
                   )
                 }
             </div>   
