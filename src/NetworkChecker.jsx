@@ -11,7 +11,7 @@ const initialValues = {
 
 const validationSchema = Yup.object().shape({
     myInput:Yup.string().phone('NG','Please enter a valid phone Number')
-                        .min(10,'Complete your 11 digits')
+                        .min(11,'Complete your 11 digits')
                         .max(11,'More than 11 digits!')
                         .required('Enter Your 11 digits')
 
