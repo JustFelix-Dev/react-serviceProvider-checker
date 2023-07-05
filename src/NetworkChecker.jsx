@@ -11,9 +11,9 @@ const initialValues = {
 
 const validationSchema = Yup.object().shape({
     myInput:Yup.string().phone('NG','Please enter a valid phone Number')
-                        .min(9,'Complete your 10 digits')
-                        .max(10,'More than 10 digits!')
-                        .required('Enter Your 10 digits')
+                        .min(10,'Complete your 11 digits')
+                        .max(11,'More than 11 digits!')
+                        .required('Enter Your 11 digits')
 
 })
 
@@ -36,47 +36,47 @@ const NetworkChecker = () => {
                 let parsedValue = JSON.stringify(value);
                 let processedValue = parsedValue.split(':')[1];
                 let updatedValue = processedValue.split('}')[0];
-                let finishedValue = updatedValue.substring(1,11);
+                let finishedValue = updatedValue.substring(1,12);
                   setMyInput(finishedValue)
-                if(finishedValue.startsWith('814')||finishedValue.startsWith('803')||finishedValue.startsWith('703')||finishedValue.startsWith('706')||finishedValue.startsWith('813')||finishedValue.startsWith('816')||finishedValue.startsWith('810')||finishedValue.startsWith('814')||finishedValue.startsWith('903')||finishedValue.startsWith('906')||finishedValue.startsWith('913')||finishedValue.startsWith('916')||finishedValue.startsWith('7025')||finishedValue.startsWith('7026')||finishedValue.startsWith('704')){
+                if(finishedValue.startsWith('0814')||finishedValue.startsWith('0803')||finishedValue.startsWith('0703')||finishedValue.startsWith('0706')||finishedValue.startsWith('0813')||finishedValue.startsWith('0816')||finishedValue.startsWith('0810')||finishedValue.startsWith('0814')||finishedValue.startsWith('0903')||finishedValue.startsWith('0906')||finishedValue.startsWith('0913')||finishedValue.startsWith('0916')||finishedValue.startsWith('07025')||finishedValue.startsWith('07026')||finishedValue.startsWith('0704')){
                          setIsLoading(false)
                          setMySrc('images/mtnLogo.png')
                          setIsHighlighted(true)
-                         setNspName('MTN : 0')
+                         setNspName('MTN : ')
                          setColor('gold')
                          setNotFound('')
                 }
-                else if(finishedValue.startsWith('805')||finishedValue.startsWith('807')||finishedValue.startsWith('705')||finishedValue.startsWith('815')||finishedValue.startsWith('811')||finishedValue.startsWith('905')||finishedValue.startsWith('915')){
+                else if(finishedValue.startsWith('0805')||finishedValue.startsWith('0807')||finishedValue.startsWith('0705')||finishedValue.startsWith('0815')||finishedValue.startsWith('0811')||finishedValue.startsWith('0905')||finishedValue.startsWith('0915')){
                         setIsLoading(false)
                         setMySrc('images/gloLogo.jpg')
                         setIsHighlighted(true)
                         setColor('green')
-                        setNspName('GLO : 0')
+                        setNspName('GLO : ')
                         setNotFound('')
 
                 }
-                else if(finishedValue.startsWith('802')||finishedValue.startsWith('808')||finishedValue.startsWith('708')||finishedValue.startsWith('812')||finishedValue.startsWith('701')||finishedValue.startsWith('902')||finishedValue.startsWith('901')||finishedValue.startsWith('904')||finishedValue.startsWith('907')||finishedValue.startsWith('912')){
+                else if(finishedValue.startsWith('0802')||finishedValue.startsWith('0808')||finishedValue.startsWith('0708')||finishedValue.startsWith('0812')||finishedValue.startsWith('0701')||finishedValue.startsWith('0902')||finishedValue.startsWith('0901')||finishedValue.startsWith('0904')||finishedValue.startsWith('0907')||finishedValue.startsWith('0912')){
                         setIsLoading(false)
                         setMySrc('images/airtelLogo.jpg')
                         setIsHighlighted(true)
-                        setNspName('AIRTEL : 0')
+                        setNspName('AIRTEL : ')
                         setColor('red')
                         setNotFound('')
 
                 }
-                else if(finishedValue.startsWith('809')||finishedValue.startsWith('818')||finishedValue.startsWith('817')||finishedValue.startsWith('909')||finishedValue.startsWith('908')){
+                else if(finishedValue.startsWith('0809')||finishedValue.startsWith('0818')||finishedValue.startsWith('0817')||finishedValue.startsWith('0909')||finishedValue.startsWith('0908')){
                             setIsLoading(false)
                             setMySrc('images/9mobileLogo.png')
                             setIsHighlighted(true)
                             setColor('green')
-                            setNspName('9mobile : 0')
+                            setNspName('9mobile : ')
                             setNotFound('')
 
                 }
                 else{
                         setIsLoading(false)
                         setMySrc('images/unknown.png')
-                        setNspName('Not Found : 0')
+                        setNspName('Not Found : ')
                         setColor('#333')
                         setNotFound("Sorry, Number not found!")
                 }
@@ -107,9 +107,10 @@ const NetworkChecker = () => {
                         </label>
                     </legend>
                     <div className="textfield">
-                        <input pattern="\d+" maxLength="10" inputMode='numeric'
+                        <input pattern="\d+" maxLength="11" inputMode='numeric'
                           autoComplete='off'
-                         id="phonenumber" type="text"
+                         id="phonenumber" 
+                         type="text"
                          name='myInput'
                          {...formik.getFieldProps('myInput')}/>
                     </div>
