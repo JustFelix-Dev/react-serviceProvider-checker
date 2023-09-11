@@ -27,7 +27,19 @@ Before you begin, make sure you have the following prerequisites:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/network-provider-checker.git
+   https://github.com/JustFelix-Dev/react-serviceProvider-checker.git
+
+2. Navigate to project directory:
+   ```bash
+     cd react-serviceProvider-checker
+
+3. Install the required dependencies:
+   ```bash
+   npm install
+
+4. Start the development server:
+   ```bash
+   npm run dev
    
 
 
